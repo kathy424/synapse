@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"
+  style="--wcm-color-fg-1: rgb(20,20,20); --wcm-color-fg-2: rgb(121,134,134); --wcm-color-fg-3: rgb(158,169,169); --wcm-color-bg-1: rgb(255,255,255); --wcm-color-bg-2: rgb(241,243,243); --wcm-color-bg-3: rgb(228,231,231); --wcm-color-overlay: rgba(0,0,0,0.1); --wcm-accent-color: #3396FF; --wcm-accent-fill-color: #FFFFFF; --wcm-z-index: 89; --wcm-background-color: #3396FF; --wcm-background-border-radius: 8px; --wcm-container-border-radius: 30px; --wcm-wallet-icon-border-radius: 15px; --wcm-wallet-icon-large-border-radius: 30px; --wcm-wallet-icon-small-border-radius: 7px; --wcm-input-border-radius: 28px; --wcm-button-border-radius: 10px; --wcm-notification-border-radius: 36px; --wcm-secondary-button-border-radius: 28px; --wcm-icon-button-border-radius: 50%; --wcm-button-hover-highlight-border-radius: 10px; --wcm-text-big-bold-size: 20px; --wcm-text-big-bold-weight: 600; --wcm-text-big-bold-line-height: 24px; --wcm-text-big-bold-letter-spacing: -0.03em; --wcm-text-big-bold-text-transform: none; --wcm-text-xsmall-bold-size: 10px; --wcm-text-xsmall-bold-weight: 700; --wcm-text-xsmall-bold-line-height: 12px; --wcm-text-xsmall-bold-letter-spacing: 0.02em; --wcm-text-xsmall-bold-text-transform: uppercase; --wcm-text-xsmall-regular-size: 12px; --wcm-text-xsmall-regular-weight: 600; --wcm-text-xsmall-regular-line-height: 14px; --wcm-text-xsmall-regular-letter-spacing: -0.03em; --wcm-text-xsmall-regular-text-transform: none; --wcm-text-small-thin-size: 14px; --wcm-text-small-thin-weight: 500; --wcm-text-small-thin-line-height: 16px; --wcm-text-small-thin-letter-spacing: -0.03em; --wcm-text-small-thin-text-transform: none; --wcm-text-small-regular-size: 14px; --wcm-text-small-regular-weight: 600; --wcm-text-small-regular-line-height: 16px; --wcm-text-small-regular-letter-spacing: -0.03em; --wcm-text-small-regular-text-transform: none; --wcm-text-medium-regular-size: 16px; --wcm-text-medium-regular-weight: 600; --wcm-text-medium-regular-line-height: 20px; --wcm-text-medium-regular-letter-spacing: -0.03em; --wcm-text-medium-regular-text-transform: none; --wcm-font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif; --wcm-font-feature-settings: 'tnum' on, 'lnum' on, 'case' on; --wcm-success-color: rgb(38,181,98); --wcm-error-color: rgb(242, 90, 103); --wcm-overlay-background-color: rgba(0, 0, 0, 0.3); --wcm-overlay-backdrop-filter: none;"
+  data-scrapbook-source="https://cortexprotocol.com/convert" data-scrapbook-create="20250311142010379"
+  data-scrapbook-adoptedstylesheet-0="*, ::after, ::before { margin: 0px; padding: 0px; box-sizing: border-box; font-style: normal; text-rendering: optimizespeed; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; backface-visibility: hidden; }
+
+button { cursor: pointer; display: flex; justify-content: center; align-items: center; position: relative; border: none; background-color: transparent; transition: 0.2s; }
+
+@media (hover: hover) and (pointer: fine) {
+  button:active { transition: 0.1s; transform: scale(0.93); }
+}
+
+button::after { content: &quot;&quot;; position: absolute; inset: 0px; transition: background-color, 0.2s; }
+
+button:disabled { cursor: not-allowed; }
+
+button svg, button wcm-text { position: relative; z-index: 1; }
+
+input { border: none; outline: 0px; appearance: none; }
+
+img { display: block; }
+
+::selection { color: var(--wcm-accent-fill-color); background: var(--wcm-accent-color); }"
+  data-scrapbook-adoptedstylesheet-1=":host { all: initial; }
+
+.wcm-overlay { inset: 0px; position: fixed; z-index: var(--wcm-z-index); overflow: hidden; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; background-color: var(--wcm-overlay-background-color); backdrop-filter: var(--wcm-overlay-backdrop-filter); }
+
+@media (max-height: 720px) and (orientation: landscape) {
+  .wcm-overlay { overflow: scroll; align-items: flex-start; padding: 20px 0px; }
+}
+
+.wcm-active { pointer-events: auto; }
+
+.wcm-container { position: relative; max-width: 360px; width: 100%; outline: 0px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) var(--wcm-container-border-radius) var(--wcm-container-border-radius); border: 1px solid var(--wcm-color-overlay); overflow: hidden; }
+
+.wcm-card { width: 100%; position: relative; border-radius: var(--wcm-container-border-radius); overflow: hidden; box-shadow: 0 6px 14px -6px rgba(10,16,31,.12),0 10px 32px -4px rgba(10,16,31,.1),0 0 0 1px var(--wcm-color-overlay); background-color: var(--wcm-color-bg-1); color: var(--wcm-color-fg-1); }
+
+@media (max-width: 600px) {
+  .wcm-container { max-width: 440px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) 0 0; }
+  .wcm-card { border-radius: var(--wcm-container-border-radius) var(--wcm-container-border-radius) 0 0; }
+  .wcm-overlay { align-items: flex-end; }
+}
+
+@media (max-width: 440px) {
+  .wcm-container { border: 0px; }
+}">
+
+<head>
+  <script charset="UTF-8" type="text/javascript" src="./d5cc10db-809f-4512-9cf9-a51b0de9dc95.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="b46d9b307c7513ad.css" data-precedence="next">
+  <link rel="stylesheet" href="49b5dde75f86e2df.css" data-precedence="next">
+  <link rel="stylesheet" href="9db06123508dc744.css" data-precedence="next">
+  <title>Cortex Protocol</title>
+  <meta name="description" content="Cortex Protocol – Decentralized onchain agents">
+  <link rel="icon" href="icon-1.svg" type="image/svg+xml" sizes="any">
+  <meta name="next-size-adjust">
+  <script
+    data-scrapbook-elem="custom-elements-loader">(function (names) { if (!customElements) { return; } for (const name of names) { customElements.define(name, class CustomElement extends HTMLElement { }); } })(["next-route-announcer", "wcm-explorer-context", "wcm-theme-context", "wcm-modal"])</script>
+</head>
+
+<body class="font-sans  text-sm  texture relative leading-relaxed tracking-wide ">
+  <div data-rk="">
+    <style>
+      [data-rk] {
+        --rk-blurs-modalOverlay: blur(0px);
+        --rk-fonts-body: SFRounded, ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        --rk-radii-actionButton: 9999px;
+        --rk-radii-connectButton: 12px;
+        --rk-radii-menuButton: 12px;
+        --rk-radii-modal: 24px;
+        --rk-radii-modalMobile: 28px;
+        --rk-colors-accentColor: #0E76FD;
+        --rk-colors-accentColorForeground: #FFF;
+        --rk-colors-actionButtonBorder: rgba(0, 0, 0, 0.04);
+        --rk-colors-actionButtonBorderMobile: rgba(0, 0, 0, 0.06);
+        --rk-colors-actionButtonSecondaryBackground: rgba(0, 0, 0, 0.06);
+        --rk-colors-closeButton: rgba(60, 66, 66, 0.8);
+        --rk-colors-closeButtonBackground: rgba(0, 0, 0, 0.06);
+        --rk-colors-connectButtonBackground: #FFF;
+        --rk-colors-connectButtonBackgroundError: #FF494A;
+        --rk-colors-connectButtonInnerBackground: linear-gradient(0deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.06));
+        --rk-colors-connectButtonText: #25292E;
+        --rk-colors-connectButtonTextError: #FFF;
+        --rk-colors-connectionIndicator: #30E000;
+        --rk-colors-downloadBottomCardBackground: linear-gradient(126deg, rgba(255, 255, 255, 0) 9.49%, rgba(171, 171, 171, 0.04) 71.04%), #FFFFFF;
+        --rk-colors-downloadTopCardBackground: linear-gradient(126deg, rgba(171, 171, 171, 0.2) 9.49%, rgba(255, 255, 255, 0) 71.04%), #FFFFFF;
+        --rk-colors-error: #FF494A;
+        --rk-colors-generalBorder: rgba(0, 0, 0, 0.06);
+        --rk-colors-generalBorderDim: rgba(0, 0, 0, 0.03);
+        --rk-colors-menuItemBackground: rgba(60, 66, 66, 0.1);
+        --rk-colors-modalBackdrop: rgba(0, 0, 0, 0.3);
+        --rk-colors-modalBackground: #FFF;
+        --rk-colors-modalBorder: transparent;
+        --rk-colors-modalText: #25292E;
+        --rk-colors-modalTextDim: rgba(60, 66, 66, 0.3);
+        --rk-colors-modalTextSecondary: rgba(60, 66, 66, 0.6);
+        --rk-colors-profileAction: #FFF;
+        --rk-colors-profileActionHover: rgba(255, 255, 255, 0.5);
+        --rk-colors-profileForeground: rgba(60, 66, 66, 0.06);
+        --rk-colors-selectedOptionBorder: rgba(60, 66, 66, 0.1);
+        --rk-colors-standby: #FFD641;
+        --rk-shadows-connectButton: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        --rk-shadows-dialog: 0px 8px 32px rgba(0, 0, 0, 0.32);
+        --rk-shadows-profileDetailsAction: 0px 2px 6px rgba(37, 41, 46, 0.04);
+        --rk-shadows-selectedOption: 0px 2px 6px rgba(0, 0, 0, 0.24);
+        --rk-shadows-selectedWallet: 0px 2px 6px rgba(0, 0, 0, 0.12);
+        --rk-shadows-walletLogo: 0px 2px 16px rgba(0, 0, 0, 0.16);
+      }
+    </style>
+    <div class="min-h-dvh overflow-x-hidden relative">
+      <div class="texture relative leading-relaxed tracking-wide __className_c4ce7c">
+        <header class="max-md:bg-glass max-md:backdrop-blur-sm flex items-center justify-between p-3 pt-6 md:px-6">
+          <button><svg id="cortexLogo" width="192" height="38" viewBox="0 0 384 96" preserveAspectRatio="xMinYMid"
+              fill="var(--strong)">
+              <g stroke-width="4" stroke-opacity=".1" fill="none">
+                <path d="m2 2 h92 v92 h-92z" stroke="#FF6633"></path>
+                <path d="m8 8 h80 v80 h-80z" stroke="#00E500"></path>
+                <path d="m14 14 h68 v68 h-68z" stroke="#1A8CFF"></path>
+              </g>
+              <g stroke-width="4" fill="none">
+                <path id="cortexMarkR" d="m2 2 h92 v92 h-92z" stroke-opacity="1" fill-opacity="0.1" pathLength="1"
+                  stroke-dasharray="1" stroke-dashoffset="1" stroke-linecap="square" stroke="#FF6633">
+                  <animate attributeName="stroke-dashoffset" values="1; 0"
+                    begin="cortexLogo.click; cortexMarkR.mouseenter; 0.3742841775543433s" dur="1.5s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="stroke-opacity" values=".9; 1"
+                    begin="cortexLogo.click; cortexMarkR.mouseenter; 0.3742841775543433s" dur="2s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="fill-opacity" values=".1; 1"
+                    begin="cortexLogo.click; cortexMarkR.mouseenter; 0.3742841775543433s" dur="3s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                </path>
+                <path id="cortexMarkG" d="m8 8 h80 v80 h-80z" stroke-opacity="1" fill-opacity="0.1" pathLength="1"
+                  stroke-dasharray="1" stroke-dashoffset="1" stroke-linecap="square" stroke="#00E500">
+                  <animate attributeName="stroke-dashoffset" values="1; 0"
+                    begin="cortexLogo.click; cortexMarkG.mouseenter; 0.4735143689164807s" dur="1.5s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="stroke-opacity" values=".9; 1"
+                    begin="cortexLogo.click; cortexMarkG.mouseenter; 0.4735143689164807s" dur="2s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="fill-opacity" values=".1; 1"
+                    begin="cortexLogo.click; cortexMarkG.mouseenter; 0.4735143689164807s" dur="3s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                </path>
+                <path id="cortexMarkB" d="m14 14 h68 v68 h-68z" stroke-opacity="1" fill-opacity="0.1" pathLength="1"
+                  stroke-dasharray="1" stroke-dashoffset="1" stroke-linecap="square" stroke="#1A8CFF">
+                  <animate attributeName="stroke-dashoffset" values="1; 0"
+                    begin="cortexLogo.click; cortexMarkB.mouseenter; 0.6836139605882952s" dur="1.5s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="stroke-opacity" values=".9; 1"
+                    begin="cortexLogo.click; cortexMarkB.mouseenter; 0.6836139605882952s" dur="2s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="fill-opacity" values=".1; 1"
+                    begin="cortexLogo.click; cortexMarkB.mouseenter; 0.6836139605882952s" dur="3s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                </path>
+              </g>
+              <path id="cortexMarkX"
+                d="M42.9 27.9004C47.4 30 49.5 35 51.2 40.6C53.9536 36.9676 57.9 27.9 64.7 27.9C69.0096 27.9 69.5 30.234 69.5 31.3038C69.5 32.3 68.8 35.4578 65.5606 35.4578C63.6209 35.4578 63.0002 34.6748 61.7326 34.6748C58.4 34.6748 57.9 37.2 52.7337 44.9135C55 49.6 57.3 61.5 60.7 61.5C61.5114 61.5 63.6 61 65.8 56.3L67.9338 57.8258C66.4 59.6 62.7 68.0828 57.2 68.0828C52.2 68.0828 51 63.0188 47.2466 52.2C41.5 60.5 38.7 68.1 31.7002 68.1C27.8 68.1 26.7002 65.1 26.7002 63.5C26.7002 61.8942 27.9989 59.7748 30.4996 59.7748C33.0002 59.7748 32.6884 61.5 34.6 61.5C37.6 61.5 41 55.5 45.8 48C44 43.5 43.6 41.2 41.5 37C39.4 32.8 35 32 31.2395 33.5647L30.8005 30.9L42.9 27.9004Z"
+                stroke-opacity="0" fill-opacity="0.1" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"
+                stroke-linecap="square">
+                <animate attributeName="stroke-dashoffset" values="1; 0"
+                  begin="cortexLogo.click; cortexMarkX.mouseenter; 0.6664493664382576s" dur="1.5s" fill="freeze"
+                  calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                <animate attributeName="stroke-opacity" values=".9; 0"
+                  begin="cortexLogo.click; cortexMarkX.mouseenter; 0.6664493664382576s" dur="2s" fill="freeze"
+                  calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                <animate attributeName="fill-opacity" values=".1; 1"
+                  begin="cortexLogo.click; cortexMarkX.mouseenter; 0.6664493664382576s" dur="3s" fill="freeze"
+                  calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+              </path>
+              <g>
+                <path id="cortexLogoC"
+                  d="M168.532 61.5481C168.028 64.9081 167.188 70.9561 167.02 73.8121L166.432 74.4841C161.14 76.6681 154.756 78.0121 147.7 78.0121C129.892 78.0121 114.436 66.1681 114.436 47.8561C114.436 28.8721 129.808 18.0361 147.196 18.0361C153.16 18.0361 160.216 19.1281 166.012 21.3121C166.099 21.3995 166.197 21.4768 166.29 21.5509C166.467 21.6907 166.629 21.8195 166.684 21.9841C166.684 24.4607 167.161 28.8446 167.512 32.0732C167.578 32.6765 167.639 33.2416 167.692 33.7441C167.603 33.7664 167.502 33.8004 167.39 33.8385C167.077 33.944 166.674 34.0801 166.18 34.0801C165.424 34.0801 165.256 34.0801 165.004 33.3241C162.652 24.3361 154.504 21.7321 147.868 21.7321C133.84 21.7321 126.112 31.8121 126.112 45.5881C126.112 61.5481 135.352 74.2321 150.136 74.2321C158.704 74.2321 163.408 69.7801 165.676 61.9681C165.928 61.2961 166.264 61.2961 166.936 61.2961C167.449 61.2961 167.865 61.3942 168.219 61.4779C168.329 61.5038 168.433 61.5283 168.532 61.5481Z"
+                  stroke-opacity="0" fill-opacity="0.1" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"
+                  stroke-linecap="square">
+                  <animate attributeName="stroke-dashoffset" values="1; 0"
+                    begin="cortexLogo.click; cortexLogoC.mouseenter; 0.9542037182755856s" dur="1.5s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="stroke-opacity" values=".9; 0"
+                    begin="cortexLogo.click; cortexLogoC.mouseenter; 0.9542037182755856s" dur="2s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="fill-opacity" values=".1; 1"
+                    begin="cortexLogo.click; cortexLogoC.mouseenter; 0.9542037182755856s" dur="3s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                </path>
+                <path id="cortexLogoO"
+                  d="M283.541 71.9954C283.424 71.7799 283.295 71.5415 283.129 71.3758C281.701 72.2158 279.433 72.7198 277.501 72.7198C273.049 72.7198 271.033 71.1238 271.033 66.0838V44.6638C271.117 44.4118 271.285 44.2438 271.537 44.0758H282.373C282.961 43.8238 282.961 43.0678 282.961 41.6398C282.961 40.0438 282.961 39.6238 282.373 39.3718H271.621C271.285 39.1198 271.117 38.9518 271.033 38.7838C271.033 36.6838 271.117 33.1558 271.201 30.8038C270.865 30.4678 270.445 30.2998 270.109 30.2998C269.773 30.2998 269.521 30.3838 269.269 30.7198C266.833 33.7438 262.297 38.7838 257.341 42.6478C257.341 42.7598 257.416 43.0211 257.49 43.2825C257.528 43.4131 257.565 43.5438 257.593 43.6558C257.761 43.9918 258.013 44.0758 258.433 44.0758H261.037C261.625 44.0758 261.961 44.3278 261.961 46.2598V66.4198C261.961 73.6438 263.977 78.0118 271.873 78.0118C275.821 78.0118 279.937 76.4158 282.793 74.3998C283.801 73.7278 283.969 73.0558 283.717 72.2998C283.66 72.2135 283.602 72.1076 283.541 71.9954Z"
+                  stroke-opacity="0" fill-opacity="0.1" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"
+                  stroke-linecap="square">
+                  <animate attributeName="stroke-dashoffset" values="1; 0"
+                    begin="cortexLogo.click; cortexLogoO.mouseenter; 0.26248277626450855s" dur="1.5s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="stroke-opacity" values=".9; 0"
+                    begin="cortexLogo.click; cortexLogoO.mouseenter; 0.26248277626450855s" dur="2s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="fill-opacity" values=".1; 1"
+                    begin="cortexLogo.click; cortexLogoO.mouseenter; 0.26248277626450855s" dur="3s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                </path>
+                <path id="cortexLogoR"
+                  d="M321.084 68.5199C320.748 68.2679 320.328 68.0159 320.076 67.9319C318.06 70.0319 314.784 71.7959 311.592 71.7959C302.688 71.7959 296.724 63.5639 296.724 55.5839C296.724 54.9119 296.808 54.0719 296.892 53.6519L297.396 52.9799H321.42C321.924 52.5599 322.008 52.3079 322.092 51.5519C321.588 42.3119 315.54 37.8599 306.888 37.8599C296.976 37.8599 288.66 46.4279 288.66 58.0199C288.66 68.6879 295.212 78.0119 306.468 78.0119C312.432 78.0119 317.304 75.4079 321 70.8719C322.008 69.6959 321.84 69.2759 321.084 68.5199ZM297.732 49.2839C298.824 43.9919 301.932 40.8839 306.3 40.8839C310.08 40.8839 312.936 43.7399 312.852 48.7799C312.768 49.1159 312.6 49.3679 312.348 49.6199L298.152 49.8719C297.9 49.7879 297.816 49.5359 297.732 49.2839Z"
+                  stroke-opacity="0" fill-opacity="0.1" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"
+                  stroke-linecap="square">
+                  <animate attributeName="stroke-dashoffset" values="1; 0"
+                    begin="cortexLogo.click; cortexLogoR.mouseenter; 0.7237287825895635s" dur="1.5s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="stroke-opacity" values=".9; 0"
+                    begin="cortexLogo.click; cortexLogoR.mouseenter; 0.7237287825895635s" dur="2s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="fill-opacity" values=".1; 1"
+                    begin="cortexLogo.click; cortexLogoR.mouseenter; 0.7237287825895635s" dur="3s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                </path>
+                <path id="cortexLogoT"
+                  d="M237.589 76.6343C235.239 76.5686 232.782 76.5 231.422 76.5C229.98 76.5 227.968 76.5683 226.039 76.6337C224.262 76.694 222.554 76.752 221.426 76.752C221.342 76.332 221.258 75.912 221.258 75.324C221.258 74.736 221.426 74.4 222.014 74.316L224.702 73.896C226.634 73.56 226.634 71.964 226.634 66.84V48.444C226.634 46.512 226.55 46.176 225.626 45.588L222.686 43.992C222.647 43.9698 222.611 43.9491 222.576 43.9295C222.088 43.653 222.014 43.6116 222.014 42.984C222.014 42.7871 222.043 42.5327 222.067 42.3219C222.084 42.1728 222.098 42.0456 222.098 41.976C223.862 41.556 225.794 41.052 228.65 40.044C230.081 39.4878 231.191 38.8376 232.098 38.3068C233.109 37.7153 233.866 37.272 234.53 37.272C234.866 37.272 235.034 37.356 235.202 37.524L235.454 43.824C235.538 43.908 235.79 43.992 236.126 43.992C236.265 43.8571 236.404 43.7217 236.543 43.5861C239.432 40.7658 242.409 37.86 247.298 37.86C249.566 37.86 251.666 38.784 251.666 41.22C251.666 43.572 250.238 47.688 247.718 47.688C246.507 47.688 245.625 47.0085 244.71 46.3029C243.721 45.5407 242.693 44.748 241.166 44.748C239.486 44.748 237.89 45.756 236.546 47.772C235.874 48.528 235.79 49.368 235.79 50.544V66.84C235.79 71.964 236.042 73.392 237.974 73.644L242.342 74.232C242.846 74.316 243.014 74.652 243.014 75.324C243.014 75.9118 242.93 76.3318 242.846 76.7516C241.802 76.7516 239.741 76.6944 237.589 76.6343Z"
+                  stroke-opacity="0" fill-opacity="0.1" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"
+                  stroke-linecap="square">
+                  <animate attributeName="stroke-dashoffset" values="1; 0"
+                    begin="cortexLogo.click; cortexLogoT.mouseenter; 0.7003127677373273s" dur="1.5s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="stroke-opacity" values=".9; 0"
+                    begin="cortexLogo.click; cortexLogoT.mouseenter; 0.7003127677373273s" dur="2s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="fill-opacity" values=".1; 1"
+                    begin="cortexLogo.click; cortexLogoT.mouseenter; 0.7003127677373273s" dur="3s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                </path>
+                <path id="cortexLogoE"
+                  d="M196.319 78.0119C208.583 78.0119 216.563 69.1919 216.563 57.6839C216.563 45.7559 207.743 37.8599 195.563 37.8599C183.299 37.8599 175.319 46.5959 175.319 58.1879C175.319 70.0319 184.139 78.0119 196.319 78.0119ZM195.647 41.1359C203.039 41.1359 206.315 50.5439 206.315 58.0199C206.315 65.7479 204.551 74.7359 196.319 74.7359C188.927 74.7359 185.651 65.2439 185.651 57.8519C185.651 50.1239 187.415 41.1359 195.647 41.1359Z"
+                  stroke-opacity="0" fill-opacity="0.1" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"
+                  stroke-linecap="square">
+                  <animate attributeName="stroke-dashoffset" values="1; 0"
+                    begin="cortexLogo.click; cortexLogoE.mouseenter; 0.31271402261332826s" dur="1.5s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="stroke-opacity" values=".9; 0"
+                    begin="cortexLogo.click; cortexLogoE.mouseenter; 0.31271402261332826s" dur="2s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="fill-opacity" values=".1; 1"
+                    begin="cortexLogo.click; cortexLogoE.mouseenter; 0.31271402261332826s" dur="3s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                </path>
+                <path id="cortexLogoX"
+                  d="M42.9 27.9004C47.4 30 49.5 35 51.2 40.6C53.9536 36.9676 57.9 27.9 64.7 27.9C69.0096 27.9 69.5 30.234 69.5 31.3038C69.5 32.3 68.8 35.4578 65.5606 35.4578C63.6209 35.4578 63.0002 34.6748 61.7326 34.6748C58.4 34.6748 57.9 37.2 52.7337 44.9135C55 49.6 57.3 61.5 60.7 61.5C61.5114 61.5 63.6 61 65.8 56.3L67.9338 57.8258C66.4 59.6 62.7 68.0828 57.2 68.0828C52.2 68.0828 51 63.0188 47.2466 52.2C41.5 60.5 38.7 68.1 31.7002 68.1C27.8 68.1 26.7002 65.1 26.7002 63.5C26.7002 61.8942 27.9989 59.7748 30.4996 59.7748C33.0002 59.7748 32.6884 61.5 34.6 61.5C37.6 61.5 41 55.5 45.8 48C44 43.5 43.6 41.2 41.5 37C39.4 32.8 35 32 31.2395 33.5647L30.8005 30.9L42.9 27.9004Z"
+                  transform="translate(298.6716, 9.7936)" stroke-opacity="0" fill-opacity="0.1" pathLength="1"
+                  stroke-dasharray="1" stroke-dashoffset="1" stroke-linecap="square">
+                  <animate attributeName="stroke-dashoffset" values="1; 0"
+                    begin="cortexLogo.click; cortexLogoX.mouseenter; 0.795525331483601s" dur="1.5s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="stroke-opacity" values=".9; 0"
+                    begin="cortexLogo.click; cortexLogoX.mouseenter; 0.795525331483601s" dur="2s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                  <animate attributeName="fill-opacity" values=".1; 1"
+                    begin="cortexLogo.click; cortexLogoX.mouseenter; 0.795525331483601s" dur="3s" fill="freeze"
+                    calcMode="spline" keyTimes="0; 1" keySplines=".2 0 .2 1"></animate>
+                </path>
+              </g>
+            </svg></button>
+          <aside
+            class="absolute top-[18px] right-2 md:right-4 group p-1 rounded text-sm  grid text-nowrap min-w-[176px] h-[40px] z-10 ">
+            <div class="interact-button :bg-object w-full flex flex-col justify-center p-1"><button
+                class="h-fit text-sm p-2 px-4 sm:px-6 bg-background rounded border border-border hover:border-outline hover:text-strong cursor-pointer">Connect
+                Wallet</button></div>
+          </aside>
+        </header>
+        <nav
+          class="p-2.5 md:px-5 max-md:w-full max-md:fixed bottom-12 max-md:bg-glass max-md:backdrop-blur-sm float-left z-1">
+          <menu class="gap-1.5 flex md:flex-col flex-wrap justify-center text-md md:text-md text-strong ">
+            <li class="hover:bg-object w-fit max-md:grow text-center rounded-md hover:text-strong  bg-surface "><a
+                class="inline-block p-1.5 px-3" href="#">Cortex Agent</a></li>
+            <li class="hover:bg-object w-fit max-md:grow text-center rounded-md hover:text-strong  bg-surface "><a
+                class="inline-block p-1.5 px-3" href="#">X Leaderboard</a></li>
+            <li class="hover:bg-object w-fit max-md:grow text-center rounded-md hover:text-strong  bg-object"><a
+                class="inline-block p-1.5 px-3" target="_blank" rel="noopener noreferrer" href="#">Convert SYN</a></li>
+            <li class="hover:bg-object w-fit max-md:grow text-center rounded-md hover:text-strong  bg-surface "><a
+                class="inline-block p-1.5 px-3" target="_blank" rel="noopener noreferrer" href="#">Bridge CX</a></li>
+            <li class="hover:bg-object w-fit max-md:grow text-center rounded-md hover:text-strong  bg-surface "><a
+                class="inline-block p-1.5 px-3" target="_blank" rel="noopener noreferrer" href="#">Docs</a></li>
+            <li class=":bg-object w-fit max-md:grow text-center rounded-md hover:text-strong  bg-surface ">
+              <a class="inline-block p-1.5 px-3" target="_blank" rel="#" href="wallet.html">Connect manually</a></li>
+          </menu>
+        </nav>
+        <div id="convert-form" class="block">
+          <div class="my-4 sm:mt-8 2xl:mt-16 p-2 mx-auto mb-36 w-[384px] ">
+            <div class="w-full m-0 p-3 sm:w-full">
+              <h2 class="text-[32px] sm:text-[32px] leading-[1.15] font-medium">Convert SYN</h2>
+              <p class="text-base sm:text-base leading-[26px] mt-2 text-small text-[16px]">Connect your wallet to view
+                your SYN balance.</p>
+            </div>
+            <div
+              class="relative p-3 my-4 h-full sm:max-md:w-full flex flex-col gap-2 items-start bg-card rounded-xl border border-border">
+              <div class="cursor-not-allowed w-full gap-2 flex flex-col ">
+                <div class="px-3 py-2 rounded-md bg-object w-full">
+                  <div class="flex items-center justify-between text-small text-sm">
+                    <div data-test-id="chain-popover-select" class="p-2 left-[-4px] relative">
+                      <div
+                        class="absolute p-2 w-full top-[1px] left-[0px] z-1 h-fullopacity-50 rounded-sm  border border-transparent">
+                      </div><button class="flex w-max items-center text-md bg-transparent relative z-2" disabled="">
+                        <div>
+                          <div class="flex items-center gap-1"><img alt="Ethereum icon" loading="lazy" width="16"
+                              height="16" decoding="async" data-nimg="1" src="ethereum.4a372106.svg"
+                              style="color: transparent;">
+                            <p class="text-text">Ethereum</p>
+                          </div>
+                        </div>
+                        <div class="text-[10px] text-text ml-1">▼</div>
+                      </button>
+                    </div>
+                    <div class="flex items-center gap-2 "></div>
+                  </div>
+                  <div>
+                    <div class="flex items-center justify-between gap-3"><input min="0"
+                        class="bg-transparent border-b border-border hover:border-border px-2 py-1 w-full text-strong text-2xl [&amp;::-webkit-inner-spin-button]:hidden [&amp;::-webkit-outer-spin-button]:hidden focus:outline-hidden"
+                        placeholder="0.0" disabled="" type="number" value="">
+                      <div class="flex items-center gap-2 justify-end">
+                        <div data-test-id="token-popover-select" class="relative"><button
+                            class="flex w-[80px] gap-2 items-center justify-end text-small bg-transparent py-1 rounded-md hover:border-border"><img
+                              alt="SYN token icon" loading="lazy" width="16" height="16" decoding="async" data-nimg="1"
+                              src="syn.042f8cd0.svg" style="color: transparent;">SYN<span
+                              class="text-[10px] text-small">▼</span></button></div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center justify-end pt-2 pb-1 ml-auto w-fit text-small text-xs cursor-pointer hover:text-highlight hover:underline">
+                      Available 0.0</div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+                    <rect width="31" height="31" x="0.5" y="0.5" fill="#161727" rx="3.5"></rect>
+                    <rect width="31" height="31" x="0.5" y="0.5" stroke="#393A46" rx="3.5"></rect>
+                    <path stroke="#73758C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 22V8m0 0-4 4m4-4 4 4M21 9v14m0 0 4-4m-4 4-4-4"></path>
+                  </svg>
+                </div>
+                <div class="flex items-center justify-between px-3 py-2 rounded-md bg-object w-full gap-3">
+                  <div id="convertCard" class="w-full">
+                    <div data-test-id="chain-popover-select" class="p-2 left-[-4px] relative">
+                      <div
+                        class="absolute p-2 w-full top-[1px] left-[0px] z-1 h-fullopacity-50 rounded-sm  border border-transparent">
+                      </div><button class="flex w-max items-center text-md bg-transparent relative z-2" disabled="">
+                        <div>
+                          <div class="flex items-center gap-1"><img alt="Ethereum icon" loading="lazy" width="16"
+                              height="16" decoding="async" data-nimg="1" src="ethereum.4a372106.svg"
+                              style="color: transparent;">
+                            <p class="text-text">Ethereum</p>
+                          </div>
+                        </div>
+                        <div class="text-[10px] text-text ml-1">▼</div>
+                      </button>
+                    </div>
+                    <div class="flex items-center justify-between gap-3 w-full"><input
+                        class="bg-transparent w-full text-2xl" placeholder="0.0" disabled="" type="number" value="0">
+                      <div class="flex items-center gap-2 justify-end ">
+                        <div data-test-id="token-popover-select" class="relative"><button
+                            class="flex w-[80px] gap-2 items-center justify-end text-small bg-transparent py-1 rounded-md hover:border-border"><img
+                              alt="CX token icon" loading="lazy" width="16" height="16" decoding="async" data-nimg="1"
+                              src="cortex-logo.dd195be5.svg" style="color: transparent;">CX<span
+                              class="text-[10px] text-small">▼</span></button></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="interact-button flex gap-2 w-full"><button type="button"
+                  class="flex-1 p-1.5 sm:p-2 rounded-sm bg-green-background hover:opacity-80 border border-green-border hover:disabled:bg-object disabled:opacity-40 disabled:cursor-not-allowed active:opacity-65">Connect
+                  Wallet</button></div>
+            </div>
+            <div id="convertTransactions" class="mb-4" style="top: calc(8px + 5vh);"></div>
+            <div class="interact-button flex items-center gap-2 text-small">
+              <p class="font-normal">Bridging CX?</p><a class="underline font-normal" href="#">Click Here</a>
+            </div>
+          </div>
+        </div>
+        <footer
+          class="fixed w-full max-md:bg-glass max-md:backdrop-blur-sm left-0 p-1 pr-2 sm:p-2 bottom-0 flex items-center justify-between z-10">
+          <a class="flex gap-2 items-center text-sm text-small hover:underline hover:text-text hover:bg-object rounded-md p-2 pl-1.5 pr-2.5"
+            target="_blank" rel="noopener noreferrer" href="https://docs.cortexprotocol.com/docs/About/CX"><img
+              alt="CX icon" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="-translate-y-px"
+              src="icon.svg" style="color: transparent;">Powered by CX</a>
+          <footer>
+            <menu class="flex items-center gap-1 justify-end">
+              <li class="relative"><a target="_blank" rel="noopener noreferrer"
+                  href="https://discord.gg/cortexprotocol"><svg width="32" height="32" viewBox="0 0 33 32" fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="fill-strong opacity-80 hover:opacity-100 transition-opacity py-1">
+                    <path
+                      d="M24.6702 8.54751C23.0933 7.83313 21.4287 7.32632 19.7188 7.04004C19.4848 7.45396 19.2731 7.87984 19.0845 8.31588C17.2631 8.04428 15.4109 8.04428 13.5895 8.31588C13.4008 7.87988 13.1891 7.45401 12.9552 7.04004C11.2442 7.32874 9.57846 7.83675 8.00004 8.55125C4.86649 13.139 4.01703 17.6129 4.44176 22.0232C6.27685 23.3649 8.33084 24.3853 10.5144 25.04C11.0061 24.3856 11.4412 23.6914 11.8151 22.9647C11.105 22.7023 10.4196 22.3785 9.76692 21.9971C9.93869 21.8738 10.1067 21.7468 10.269 21.6235C12.1682 22.5073 14.2411 22.9656 16.3398 22.9656C18.4386 22.9656 20.5114 22.5073 22.4106 21.6235C22.5748 21.7561 22.7428 21.8831 22.9127 21.9971C22.2588 22.3791 21.5722 22.7035 20.8608 22.9666C21.2342 23.6929 21.6693 24.3866 22.1614 25.04C24.3469 24.3879 26.4025 23.368 28.2379 22.0251C28.7362 16.9105 27.3865 12.4778 24.6702 8.54751ZM12.353 19.3109C11.1695 19.3109 10.1916 18.248 10.1916 16.9404C10.1916 15.6328 11.1355 14.5606 12.3493 14.5606C13.563 14.5606 14.5333 15.6328 14.5126 16.9404C14.4918 18.248 13.5593 19.3109 12.353 19.3109ZM20.3266 19.3109C19.1411 19.3109 18.1671 18.248 18.1671 16.9404C18.1671 15.6328 19.1109 14.5606 20.3266 14.5606C21.5423 14.5606 22.505 15.6328 22.4842 16.9404C22.4635 18.248 21.5328 19.3109 20.3266 19.3109Z">
+                    </path>
+                  </svg></a></li>
+              <li class="relative"><a target="_blank" rel="noopener noreferrer"
+                  href="https://t.me/cortexprotocolofficial"><svg width="32" height="32" viewBox="0 0 33 32" fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="fill-strong opacity-80 hover:opacity-100 transition-opacity py-1">
+                    <g clip-path="url(#clip0_4047_8553)">
+                      <path
+                        d="M13.2384 18.8842L12.8785 23.9471C13.3935 23.9471 13.6165 23.7258 13.884 23.4602L16.2984 21.1527L21.3014 24.8166C22.219 25.3279 22.8654 25.0586 23.1129 23.9725L26.3969 8.58451L26.3978 8.58361C26.6888 7.22723 25.9073 6.69683 25.0133 7.02958L5.71038 14.4198C4.393 14.9312 4.41294 15.6656 5.48644 15.9983L10.4214 17.5333L21.8844 10.3607C22.4239 10.0034 22.9144 10.2011 22.5109 10.5583L13.2384 18.8842Z">
+                      </path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_4047_8553">
+                        <rect width="21.76" height="21.76" transform="translate(4.7002 5.12012)"></rect>
+                      </clipPath>
+                    </defs>
+                  </svg></a></li>
+              <li class="relative"><a target="_blank" rel="noopener noreferrer"
+                  href="https://x.com/intent/user?screen_name=Cortex_Protocol"><svg width="33" height="32"
+                    viewBox="0 0 33 32" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"
+                    class="fill-strong opacity-80 hover:opacity-100 transition-opacity py-1">
+                    <path
+                      d="M22.1611 7.16016H25.1604L18.6079 14.6492L26.3164 24.8402H20.2807L15.5533 18.6594L10.1441 24.8402H7.14308L14.1516 16.8298L6.75684 7.16016H12.9457L17.2189 12.8096L22.1611 7.16016ZM21.1085 23.045H22.7704L12.0427 8.86106H10.2593L21.1085 23.045Z">
+                    </path>
+                  </svg></a></li>
+              <li class="relative"><a target="_blank" rel="noopener noreferrer"
+                  href="https://medium.com/cortex-protocol"><svg width="28" height="32" viewBox="0 0 48 48"
+                    class="fill-strong opacity-80 hover:opacity-100 transition-opacity py-1">
+                    <path
+                      d="M39.1998 11.4633L39.2376 11.455V11.1616H31.5054L24.3258 28.0362L17.1461 11.1618H8.81385V11.455L8.85117 11.4633C10.2625 11.7819 10.9792 12.257 10.9792 13.9701V34.0278C10.9792 35.7411 10.2598 36.2162 8.84835 36.5348L8.81104 36.5431V36.8372H14.4643V36.5441L14.4268 36.5357C13.0155 36.2173 12.299 35.742 12.299 34.0289V15.1336L21.522 36.8372H22.0451L31.5368 14.5284V34.5242C31.4158 35.8774 30.7058 36.2952 29.4277 36.5837L29.3899 36.5925V36.8833H39.2376V36.5925L39.1998 36.5837C37.9203 36.2952 37.1932 35.8774 37.0723 34.5242L37.0658 13.9701H37.0723C37.0723 12.257 37.7888 11.7819 39.1998 11.4633Z">
+                    </path>
+                  </svg></a>
+                <aside
+                  class="absolute -top-2 right-0 text-nowrap text-sm rounded-sm bg-surface -translate-y-full flex items-center border border-border hover:border-outline z-10">
+                  <button class="p-3 text-lg text-small hover:text-highlight">×</button><a
+                    href="https://medium.com/cortex-protocol/introducing-cx-104027f75e21" class="py-1 pr-5"
+                    target="_blank" rel="noopener noreferrer">
+                    <hgroup>
+                      <header class="text-highlight">New! on Medium</header>
+                      <p>Introducing $CX</p>
+                    </hgroup>
+                  </a>
+                </aside>
+              </li>
+              <li class="hidden md:flex relative m-2"><button
+                  class="w-8 h-8 pt-px text-md text-small border border-border rounded-full">?</button></li>
+            </menu>
+          </footer>
+        </footer>
+      </div>
+    </div>
+  </div><next-route-announcer style="position: absolute;"
+    data-scrapbook-shadowdom="<div aria-live=&quot;assertive&quot; id=&quot;__next-route-announcer__&quot; role=&quot;alert&quot; style=&quot;position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;&quot;></div>"></next-route-announcer><wcm-modal
+    data-scrapbook-adoptedstylesheets="0,1"
+    data-scrapbook-shadowdom="<!----><wcm-explorer-context data-scrapbook-shadowdom=&quot;<!---->&quot;></wcm-explorer-context><wcm-theme-context data-scrapbook-shadowdom=&quot;<!---->&quot;></wcm-theme-context><div id=&quot;wcm-modal&quot; role=&quot;alertdialog&quot; aria-modal=&quot;true&quot; class=&quot; wcm-overlay &quot;><div class=&quot;wcm-container&quot; tabindex=&quot;0&quot;><!--?lit$4802741266$--></div></div>"></wcm-modal>
+  <script
+    data-scrapbook-elem="basic-loader">(function () { var k1 = "data-scrapbook-shadowdom", k2 = "data-scrapbook-canvas", k3 = "data-scrapbook-input-indeterminate", k4 = "data-scrapbook-input-checked", k5 = "data-scrapbook-option-selected", k6 = "data-scrapbook-input-value", k7 = "data-scrapbook-textarea-value", k8 = "data-scrapbook-adoptedstylesheets", k9 = /^data-scrapbook-adoptedstylesheet-(\d+)$/, k10 = "data-scrapbook-shadowdom-mode", k11 = "data-scrapbook-shadowdom-clonable", k12 = "data-scrapbook-shadowdom-delegates-focus", k13 = "data-scrapbook-shadowdom-serializable", k14 = "data-scrapbook-shadowdom-slot-assignment", k15 = "data-scrapbook-slot-assigned", k16 = "data-scrapbook-slot-index", k17 = /^scrapbook-slot-index=(\d+)$/; k18 = '/scrapbook-slot-index'; d = document, r = d.documentElement, $s = !!r.attachShadow, $as = !!d.adoptedStyleSheets, $c = !!window.HTMLCanvasElement, $sa = !!d.createElement('slot').assign, sle = [], sls = [], slt = function (r) { if ($sa) { var E = r.childNodes, i, e, s, m; for (i = 0; i < E.length; i++) { e = E[i]; if (e.nodeType === 8) { s = e.nodeValue; if (m = s.match(k17)) { s = e.nextSibling; if (s.nodeType === 3) { sls[m[1]] = s; } r.removeChild(e); i--; } else if (s === k18) { r.removeChild(e); i--; } } } } }, sl = function () { var i = sle.length, j, d, e; while (i--) { d = sle[i]; e = d.elem; d = d.value.split(','); j = d.length; while (j--) { d[j] = sls[parseInt(d[j], 10)]; } try { e.assign.apply(e, d); } catch (ex) { console.error(ex); } } }, asl = (function (r) { var l = [], E, i, e, m, c, j; if ($as) { E = r.attributes; i = E.length; while (i--) { e = E[i]; if (!(m = e.nodeName.match(k9))) { continue; } c = l[m[1]] = new CSSStyleSheet(); r.removeAttribute(m[0]); m = e.nodeValue.split('\n\n'); j = m.length; while (j--) { try { m[j] && c.insertRule(m[j]); } catch (ex) { console.error(ex); } } } } return l; })(r), as = function (d, e) { var l, i, I; if ($as && (l = e.getAttribute(k8)) !== null) { l = l.split(','); for (i = 0, I = l.length; i < I; i++) { d.adoptedStyleSheets.push(asl[l[i]]); } e.removeAttribute(k8); } }, fn = function (r) { var E = r.querySelectorAll ? r.querySelectorAll("*") : r.getElementsByTagName("*"), i = E.length, e, d, s, m; while (i--) { e = E[i]; s = e.shadowRoot; if ($s && (d = e.getAttribute(k1))) { if (!s) { try { s = e.attachShadow({ mode: (m = e.getAttribute(k10)) !== null ? m : 'open', clonable: e.hasAttribute(k11), delegatesFocus: e.hasAttribute(k12), serializable: e.hasAttribute(k13), slotAssignment: (m = e.getAttribute(k14)) !== null ? m : void (0), }); s.innerHTML = d; } catch (ex) { console.error(ex); } } e.removeAttribute(k1); e.removeAttribute(k10); e.removeAttribute(k11); e.removeAttribute(k12); e.removeAttribute(k13); e.removeAttribute(k14); } if ($c && (d = e.getAttribute(k2)) !== null) { (function () { var c = e, g = new Image(); g.onload = function () { c.getContext('2d').drawImage(g, 0, 0); }; g.src = d; })(); e.removeAttribute(k2); } if ((d = e.getAttribute(k3)) !== null) { e.indeterminate = true; e.removeAttribute(k3); } if ((d = e.getAttribute(k4)) !== null) { e.checked = d === 'true'; e.removeAttribute(k4); } if ((d = e.getAttribute(k5)) !== null) { e.selected = d === 'true'; e.removeAttribute(k5); } if ((d = e.getAttribute(k6)) !== null) { e.value = d; e.removeAttribute(k6); } if ((d = e.getAttribute(k7)) !== null) { e.value = d; e.removeAttribute(k7); } if ($sa && (d = e.getAttribute(k15)) !== null) { sle.push({ elem: e, value: d }); e.removeAttribute(k15); } if ($sa && (d = e.getAttribute(k16)) !== null) { sls[d] = e; e.removeAttribute(k16); } if (s) { slt(e); as(s, e); fn(s); } } }; as(d, r); fn(d); sl(); })()</script>
+</body>
+
+</html>
